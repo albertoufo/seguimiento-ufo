@@ -7,7 +7,7 @@ fetch(url)
   );
 function myItems(jsonString){
   var json = JSON.parse(jsonString);
-  var table = '<h1>'
+  var table = '<div>'
   json.table.cols.forEach(colonne => table += '<p class="uno">' + colonne.label + '</p>')
   table += '</p>'
   json.table.rows.forEach(ligne => {

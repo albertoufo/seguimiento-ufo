@@ -16,12 +16,12 @@ h1{
 .card{
     border: none;
     background-color: #fff;
-    border: 1px solid #f1f1f1;
+    border: .5px solid #f1f1f1;
     border-radius: 16px;
 }
 
 hr{
-    border: 1px solid #f1f1f1;
+    border: .5px solid #e0e0e0;
 }
 
 

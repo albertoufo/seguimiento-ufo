@@ -25,7 +25,7 @@
   </div>
 
   <div class="container px-4">
-    <div class="gx-3 row">
+    <div class="gx-2 row">
 
 
       <div class="col h-100" style="display: contents;">
@@ -95,7 +95,7 @@
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-        + minutes + "m ";
+        + minutes + "m " + seconds + "s";
 
       if (distance < 0) {
         clearInterval(x);

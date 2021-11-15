@@ -1,2 +1,8 @@
-table {border-collapse: collapse;}
-th,td{border: 1px solid black;}
+.card{
+    width: 100%;
+    max-width: 1440px;
+}
+
+.body{
+    background-color: #fafafa;
+}

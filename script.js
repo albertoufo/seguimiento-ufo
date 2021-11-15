@@ -7,20 +7,20 @@ fetch(url)
   );
 function myItems(jsonString){
   var json = JSON.parse(jsonString);
-  var table = '<table><tr>'
-  json.table.cols.forEach(colonne => table += '<th>' + colonne.label + '</th>')
-  table += '</tr>'
+  var table = '<p>'
+  json.table.cols.forEach(colonne => table += '<p>' + colonne.label + '</p>')
+  table += '</p>'
   json.table.rows.forEach(ligne => {
-    table += '<tr>'
+    table += '<p>'
     ligne.c.forEach(cellule => {
         try{var valeur = cellule.f ? cellule.f : cellule.v}
         catch(e){var valeur = ''}
-        table += '<td>' + valeur + '</td>'
+        table += '<p>' + valeur + '</p>'
       }
     )
-    table += '</tr>'
+    table += '</p>'
     }
   )
-  table += '</table>'
+  table += '</p>'
   return table
 }

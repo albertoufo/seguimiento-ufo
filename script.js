@@ -23,4 +23,5 @@ function myItems(jsonString){
   )
   table += '</div>'
   return table
+  
 }

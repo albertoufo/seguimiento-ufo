@@ -1,5 +1,5 @@
 var id = '1pXcfkMKdXFD3XvmuBgkgVu7UXoxYN3ZDKOoOchIjKO0';
-var gid = '1';
+var gid = '0';
 var url = 'https://docs.google.com/spreadsheets/d/'+id+'/gviz/tq?tqx=out:json&tq&gid='+gid;
 fetch(url)
   .then(response => response.text())

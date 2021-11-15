@@ -27,19 +27,27 @@
 
 
     <div class="card producto m-3 col-4">
-      
-     <div class=" h-100 d-flex flex-column align-items-center">
 
-       <h5><strong>Tiempo restante para lanzar el producto</strong></h5>
-       <h1 id="demo" class="m-auto my-3"></h1>
+      <div class="p-3 pb-0 w-100">
+
+        <h5><strong>Producto</strong></h5>
+
       </div>
-     
+      <hr>
+
+      <div class=" h-100 d-flex flex-column align-items-center">
+
+        <h5><strong>Tiempo restante para lanzar el producto</strong></h5>
+        <h1 id="demo" class="m-auto my-3"></h1>
+      </div>
+
     </div>
 
   </div>
 
 
   <script src="./script.js"></script>
+
   <script>
 
     var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
@@ -55,7 +63,7 @@
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-        + minutes + "m " + seconds + "s ";
+        + minutes + "m ";
 
       if (distance < 0) {
         clearInterval(x);

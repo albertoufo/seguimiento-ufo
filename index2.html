@@ -17,7 +17,9 @@
         fetch(url).then(result=>result.text().then(function(csvtext){
             return csv().formString(csvtext);
         }).then(function(csv){
-            main.innerHTML += "<h3>" + row.name + "</h3>"
+            csv.forEach(function(row){
+                main.innerHTML += "<h3>" + row.name + "</h3>"
+            })
         })) 
 
       </script>

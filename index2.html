@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
+
 </head>
 <body>
     <main>
@@ -12,7 +14,7 @@
     </main>
 </body>
 
-<!-- <script>
+<script>
     const url = "https://docs.google.com/spreadsheets/d/1pUIEiPw2HEjjMjpanO6T4K_pZA11oLKA6CqdCFeOmns/export?format=csv";
     const main = document.querySelector("main");
     main.innerHTML = "<p>Loading...pr</p>";
@@ -27,11 +29,13 @@
         });
     }); 
 
-  </script> -->
-    <script>
+  </script>
+    <!-- <script>
         const url = "https://docs.google.com/spreadsheets/d/1pUIEiPw2HEjjMjpanO6T4K_pZA11oLKA6CqdCFeOmns/export?format=csv";
         const main = document.querySelector("main");
-        fetch(url).then(result=>result.text()).then(csvtext=>main.innerHTML=csvtext); 
+        fetch(url).then(result=>result.text()).then(function(csvtext){
 
-      </script>
+        }); 
+
+      </script> -->
 </html>

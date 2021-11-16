@@ -17,7 +17,7 @@ h1{
 .card{
     border: none;
     background-color: #fff;
-    border-radius: 16px;
+    border-radius: 8px;
     min-height: 430px;
 }
 

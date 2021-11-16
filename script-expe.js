@@ -15,7 +15,7 @@ function myItems(jsonString){
     ligne.c.forEach(cellule => {
         try{var valeur = cellule.f ? cellule.f : cellule.v}
         catch(e){var valeur = ''}
-        table += '<p  class="tres">' + valeur + '</p>'
+        table += '<p class="tres">' + valeur + '</p>'
       }
     )
     // table += '</p>'

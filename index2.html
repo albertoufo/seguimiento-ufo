@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +8,6 @@
     <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
 
 </head>
-
 <body>
     <main>
 
@@ -20,19 +18,19 @@
     const url = "https://docs.google.com/spreadsheets/d/1pUIEiPw2HEjjMjpanO6T4K_pZA11oLKA6CqdCFeOmns/export?format=csv";
     const main = document.querySelector("main");
     main.innerHTML = "<p>Loading...pr</p>";
-    fetch(url).then(result => result.text()).then(function (csvtext) {
+    fetch(url).then(result=>result.text()).then(function(csvtext) {
         return csv().fromString(csvtext);
-    }).then(function (csv) {
-        main.innerHTML = "<code>" + JSON.stringify(csv) + "</code>"
-        csv.forEach(function (row) {
+    }).then(function(csv){
+        // main.innerHTML = "<code>" + JSON.stringify(csv) + "</code>"
+        csv.forEach(function(row){
             main.innerHTML += "<h3>" + row.respuesta + "</h3>"
-            main.innerHTML += "<h3>" + eee.respuesta + "</h3>"
-            main.innerHTML += "<h3>" + aaa.respuesta + "</h3>"
+            main.innerHTML += "<h3>" + row.eee + "</h3>"
+            main.innerHTML += "<h3>" + row.aaa + "</h3>"
         });
-    });
+    }); 
 
-</script>
-<!-- <script>
+  </script>
+    <!-- <script>
         const url = "https://docs.google.com/spreadsheets/d/1pUIEiPw2HEjjMjpanO6T4K_pZA11oLKA6CqdCFeOmns/export?format=csv";
         const main = document.querySelector("main");
         fetch(url).then(result=>result.text()).then(function(csvtext){
@@ -40,5 +38,4 @@
         }); 
 
       </script> -->
-
 </html>

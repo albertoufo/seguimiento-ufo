@@ -17,7 +17,7 @@
 <script>
     const url = "https://docs.google.com/spreadsheets/d/1pUIEiPw2HEjjMjpanO6T4K_pZA11oLKA6CqdCFeOmns/export?format=csv";
     const main = document.querySelector("main");
-    main.innerHTML = "<p>Loading...pr</p>";
+    main.innerHTML = "<iframe src='https://embed.lottiefiles.com/animation/9131'></iframe>";
     fetch(url).then(result=>result.text()).then(function(csvtext) {
         return csv().fromString(csvtext);
     }).then(function(csv){

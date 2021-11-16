@@ -12,20 +12,26 @@
     </main>
 </body>
 
+<!-- <script>
+    const url = "https://docs.google.com/spreadsheets/d/1pUIEiPw2HEjjMjpanO6T4K_pZA11oLKA6CqdCFeOmns/export?format=csv";
+    const main = document.querySelector("main");
+    main.innerHTML = "<p>Loading...pr</p>";
+    fetch(url).then(result=>result.text()).then(function(csvtext) {
+        return csv().fromString(csvtext);
+    }).then(function(csv){
+        main.innerHTML = "<code>" + JSON.stringify(csv) + "</code>"
+        csv.forEach(function(row){
+            main.innerHTML += "<h3>" + row.respuesta + "</h3>"
+            main.innerHTML += "<h3>" + eee.respuesta + "</h3>"
+            main.innerHTML += "<h3>" + aaa.respuesta + "</h3>"
+        });
+    }); 
+
+  </script> -->
     <script>
         const url = "https://docs.google.com/spreadsheets/d/1pUIEiPw2HEjjMjpanO6T4K_pZA11oLKA6CqdCFeOmns/export?format=csv";
         const main = document.querySelector("main");
-        main.innerHTML = "<p>Loading...pr</p>";
-        fetch(url).then(result=>result.text()).then(function(csvtext) {
-            return csv().fromString(csvtext);
-        }).then(function(csv){
-            main.innerHTML = "<code>" + JSON.stringify(csv) + "</code>"
-            csv.forEach(function(row){
-                main.innerHTML += "<h3>" + row.respuesta + "</h3>"
-                main.innerHTML += "<h3>" + eee.respuesta + "</h3>"
-                main.innerHTML += "<h3>" + aaa.respuesta + "</h3>"
-            });
-        }); 
+        fetch(url).then(result=>result.text()).then(csvtext=>main.innerHTML=csvtext); 
 
       </script>
 </html>

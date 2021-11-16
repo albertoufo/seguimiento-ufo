@@ -57,9 +57,9 @@
     }).then(function(csv){
         // main.innerHTML = "<code>" + JSON.stringify(csv) + "</code>"
         csv.forEach(function(row){
-            main.innerHTML += "<h3>" + row.respuesta + "</h3>"
-            main.innerHTML += "<h3>" + row.eee + "</h3>"
-            main.innerHTML += "<h3>" + row.aaa + "</h3>"
+            main.innerHTML += "<div class='col-6'>" + row.respuesta + "</div>"
+            main.innerHTML += "<div class='col-6'>" + row.eee + "</div>"
+            main.innerHTML += "<div class='col-6'>" + row.aaa + "</div>"
         });
     }); 
 

@@ -14,13 +14,13 @@
         const url = "https://docs.google.com/spreadsheets/d/1pUIEiPw2HEjjMjpanO6T4K_pZA11oLKA6CqdCFeOmns/export?format=csv";
         const main = document.querySelector("main");
         main.innerHTML = "<p>Loading...</p>";
-        fetch(url).then(result=>result.text().then(function(csvtext){
+        fetch(url).then(result=>result.text()).then(function(csvtext){
             return csv().formString(csvtext);
         }).then(function(csv){
             csv.forEach(function(row){
                 main.innerHTML += "<h3>" + row.name + "</h3>"
-            })
-        })) 
+            });
+        }); 
 
       </script>
 </body>

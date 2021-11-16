@@ -63,10 +63,10 @@
         return csv().fromString(csvtext);
     }).then(function(csv){
         csv.forEach(function(row){
-            ventas.innerHTML += "<div class='col-6'> <h4>Ventas anuales</h4> " + ventasanuales.respuesta + "</div>"
-            ventas.innerHTML += "<div class='col-6'> <h4>Objetivo anual</h4> " + objetivoanual.eee + "</div>"
-            ventas.innerHTML += "<div class='col-6'> <h4>Ventas mensuales</h4> " + ventasmensual.aaa + "</div>"
-            ventas.innerHTML += "<div class='col-6'> <h4>Objetivo mensuales</h4> " + objetivomensual.aaa + "</div>"
+            ventas.innerHTML += "<div class='col-6'> <h4>Ventas anuales</h4> " + row.ventasanuales + "</div>"
+            ventas.innerHTML += "<div class='col-6'> <h4>Objetivo anual</h4> " + row.objetivoanual + "</div>"
+            ventas.innerHTML += "<div class='col-6'> <h4>Ventas mensuales</h4> " + row.ventasmensual + "</div>"
+            ventas.innerHTML += "<div class='col-6'> <h4>Objetivo mensuales</h4> " + row.objetivomensual + "</div>"
         });
     }); 
 

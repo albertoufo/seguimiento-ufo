@@ -38,7 +38,7 @@
 
           </div>
           <hr>
-          <div id="ventas" class="p-3"></div>
+          <div id="ventas" class="p-3 row"></div>
         </div>
       </div>
 
@@ -62,9 +62,10 @@
         return csv().fromString(csvtext);
     }).then(function(csv){
         csv.forEach(function(row){
-            ventas.innerHTML += "<div class='col-6'> Ventas anuales" + ventasanuales.respuesta + "</div>"
-            ventas.innerHTML += "<div class='col-6'>" + row.eee + "</div>"
-            ventas.innerHTML += "<div class='col-6'>" + row.aaa + "</div>"
+            ventas.innerHTML += "<div class='col-6'> <strong>Ventas anuales</strong>" + ventasanuales.respuesta + "</div>"
+            ventas.innerHTML += "<div class='col-6'> <strong>Objetivo anual</strong>" + objetivoanual.eee + "</div>"
+            ventas.innerHTML += "<div class='col-6'> <strong>Ventas mensuales</strong>" + ventasmensual.aaa + "</div>"
+            ventas.innerHTML += "<div class='col-6'> <strong>Objetivo mensuales</strong>" + objetivomensual.aaa + "</div>"
         });
     }); 
 

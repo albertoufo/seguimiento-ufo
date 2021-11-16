@@ -8,17 +8,18 @@
 </head>
 <body>
     
+    <main></main>
+
     <script>
-   function init() {
-          Papa.parse('https://docs.google.com/spreadsheets/d/e/2PACX-1vRB4E_6RnpLP1wWMjqcwsUvotNATB8Np3OntlXb7066ULcAHI9oqqRhucltFifPTYNd7DRNRE56oTdt/pub?output=csv', {
-          download: true,
-          header: true,
-          complete: function(results) {
-            var data = results.data
-            console.log(data)
-          }
-        })
-window.addEventListener('DOMContentLoaded', init)}
+        const url = "";
+        const main = document.querySelector("main");
+        main.innerHTML = "<p>Loading...</p>";
+        fetch(url).then(result=>result.text().then(function(csvtext){
+            return csv().formString(csvtext);
+        }).then(function(csv){
+            main.innerHTML += "<h3>" + row.name + "</h3>"
+        })) 
+
       </script>
 </body>
 </html>

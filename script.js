@@ -5,8 +5,8 @@ fetch(url)
   .then(response => response.text())
   .then(data => document.getElementById("ventas").innerHTML=myItems(data.substring(47).slice(0, -2))  
   );
- console.log(data)
-
+ 
+  console.log(jsonString)
 function myItems(jsonString){
  console.log(JSON.parse(jsonString))
   var json = JSON.parse(jsonString);

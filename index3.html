@@ -29,7 +29,6 @@
   <div class="container-fluid px-3">
     <div class="gx-2 my-3 row">
 
-
       <div class="col h-100">
 
         <div class="card ventas">
@@ -43,90 +42,31 @@
         </div>
       </div>
 
-      <div class="col h-100">
-        <div class="card producto">
-
-          <div class="p-3 pb-0 w-100">
-
-            <h5><strong>Producto</strong></h5>
-
-          </div>
-          <hr>
-
-          <div class=" h-100 d-flex flex-column align-items-center justify-content-center my-auto">
-
-            <h5><strong>Quedan</strong></h5>
-            <h1 id="demo" class="m-auto my-3"></h1>
-
-          </div>
-
-        </div>
-      </div>
-
-      <div class="col h-100">
-        <div class=" card mkt">
-          <div class="p-3 pb-0 w-100">
-
-            <h5><strong>Marketing</strong></h5>
-
-          </div>
-          <hr>
-          <div id="mkt" class="p-3"></div>
-        </div>
-      </div>
-
-
-
-
     </div>
-
-    <div class="gx-2 my-3 row">
-
-      <div class="col h-100">
-        <div class="card experience">
-          <div class="p-3 pb-0 w-100">
-
-            <h5><strong>Experience</strong></h5>
-
-          </div>
-          <hr>
-          <div id="experience" class="p-3"></div>
-        </div>
-      </div>
-
-      <div class="col h-100">
-        <div class=" card inversion">
-          <div class="p-3 pb-0 w-100">
-
-            <h5><strong>Inversión</strong></h5>
-
-          </div>
-          <hr>
-          <div id="inversion" class="p-3"></div>
-        </div>
-      </div>
-
-      <div class="col h-100">
-        <div class=" card personas">
-          <div class="p-3 pb-0 w-100">
-
-            <h5><strong>Personas</strong></h5>
-
-          </div>
-          <hr>
-          <div id="personas" class="p-3"></div>
-        </div>
-      </div>
-
-
-    </div>
-
   </div>
 
 
-  <script src="./script.js"></script>
-  <script src="./script-mkt.js"></script>
-  <script src="./script-expe.js"></script>
+
+
+
+  <script>
+    const url = "https://docs.google.com/spreadsheets/d/1pUIEiPw2HEjjMjpanO6T4K_pZA11oLKA6CqdCFeOmns/export?format=csv";
+    const main = document.querySelector("#ventas");
+    main.innerHTML = "<p>Loading...</p>";
+    fetch(url).then(result=>result.text()).then(function(csvtext) {
+        return csv().fromString(csvtext);
+    }).then(function(csv){
+        // main.innerHTML = "<code>" + JSON.stringify(csv) + "</code>"
+        csv.forEach(function(row){
+            main.innerHTML += "<h3>" + row.respuesta + "</h3>"
+            main.innerHTML += "<h3>" + row.eee + "</h3>"
+            main.innerHTML += "<h3>" + row.aaa + "</h3>"
+        });
+    }); 
+
+  </script>
+
+
 
   <script>
 

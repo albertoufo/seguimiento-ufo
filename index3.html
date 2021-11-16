@@ -14,7 +14,6 @@
 <body> 
 
   <div class="p-3 w-100 text-center">
-    <a href="./index2.html"> cambiar </a>
     <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M52.8682 13.6299C55.8957 13.6299 58.3499 11.1757 58.3499 8.1483C58.3499 5.12088 55.8957 2.66666 52.8682 2.66666C49.8407 2.66666 47.3864 5.12088 47.3864 8.1483C47.3864 11.1757 49.8407 13.6299 52.8682 13.6299Z"
@@ -42,8 +41,79 @@
         </div>
       </div>
 
+      <div class="col h-100">
+
+        <div class="card ventas">
+          <div class="p-3 pb-0 w-100">
+
+            <h5><strong>Producto</strong></h5>
+
+          </div>
+          <hr>
+          <div id="producto" class="p-3 row"></div>
+        </div>
+      </div>
+
+      <div class="col h-100">
+
+        <div class="card ventas">
+          <div class="p-3 pb-0 w-100">
+
+            <h5><strong>Marketing</strong></h5>
+
+          </div>
+          <hr>
+          <div id="marketing" class="p-3 row"></div>
+        </div>
+      </div>
+
     </div>
+
+    <div class="gx-2 my-3 row">
+
+        <div class="col h-100">
+  
+          <div class="card ventas">
+            <div class="p-3 pb-0 w-100">
+  
+              <h5><strong>Experience</strong></h5>
+  
+            </div>
+            <hr>
+            <div id="experience" class="p-3 row"></div>
+          </div>
+        </div>
+  
+        <div class="col h-100">
+  
+          <div class="card ventas">
+            <div class="p-3 pb-0 w-100">
+  
+              <h5><strong>Inversión</strong></h5>
+  
+            </div>
+            <hr>
+            <div id="inversion" class="p-3 row"></div>
+          </div>
+        </div>
+  
+        <div class="col h-100">
+  
+          <div class="card ventas">
+            <div class="p-3 pb-0 w-100">
+  
+              <h5><strong>Producción</strong></h5>
+  
+            </div>
+            <hr>
+            <div id="produccion" class="p-3 row"></div>
+          </div>
+        </div>
+  
+      </div>
   </div>
+
+ 
 
 
 
@@ -51,6 +121,13 @@
 
   <script>
     const urlventas = "https://docs.google.com/spreadsheets/d/1pXcfkMKdXFD3XvmuBgkgVu7UXoxYN3ZDKOoOchIjKO0/export?format=csv";
+    const urlproducto = "https://docs.google.com/spreadsheets/d/1pXcfkMKdXFD3XvmuBgkgVu7UXoxYN3ZDKOoOchIjKO0/export?format=csv";
+    const urlmarketing = "https://docs.google.com/spreadsheets/d/1pXcfkMKdXFD3XvmuBgkgVu7UXoxYN3ZDKOoOchIjKO0/export?format=csv";
+    const urlexperience = "https://docs.google.com/spreadsheets/d/1pXcfkMKdXFD3XvmuBgkgVu7UXoxYN3ZDKOoOchIjKO0/export?format=csv";
+    const urlinversion = "https://docs.google.com/spreadsheets/d/1pXcfkMKdXFD3XvmuBgkgVu7UXoxYN3ZDKOoOchIjKO0/export?format=csv";
+    const urlproduccion = "https://docs.google.com/spreadsheets/d/1pXcfkMKdXFD3XvmuBgkgVu7UXoxYN3ZDKOoOchIjKO0/export?format=csv";
+    const urlexpansion = "https://docs.google.com/spreadsheets/d/1pXcfkMKdXFD3XvmuBgkgVu7UXoxYN3ZDKOoOchIjKO0/export?format=csv";
+    
     const ventas = document.querySelector("#ventas");
     const producto = document.querySelector("#producto");
     const marketing = document.querySelector("#marketing");
@@ -63,10 +140,10 @@
         return csv().fromString(csvtext);
     }).then(function(csv){
         csv.forEach(function(row){
-            ventas.innerHTML += "<div class='col-6 my-2'> <h4>Ventas anuales</h4> " + row.ventasanuales + "</div>"
-            ventas.innerHTML += "<div class='col-6 my-2'> <h4>Objetivo anual</h4> " + row.objetivoanual + "</div>"
-            ventas.innerHTML += "<div class='col-6 my-2'> <h4>Ventas mensuales</h4> " + row.ventasmensual + "</div>"
-            ventas.innerHTML += "<div class='col-6 my-2'> <h4>Objetivo mensuales</h4> " + row.objetivomensual + "</div>"
+            ventas.innerHTML += "<div class='col-6 my-2'> <h5>Ventas anuales</h5> " + row.ventasanuales + "</div>"
+            ventas.innerHTML += "<div class='col-6 my-2'> <h5>Objetivo anual</h5> " + row.objetivoanual + "</div>"
+            ventas.innerHTML += "<div class='col-6 my-2'> <h5>Ventas mensuales</h5> " + row.ventasmensual + "</div>"
+            ventas.innerHTML += "<div class='col-6 my-2'> <h5>Objetivo mensuales</h5> " + row.objetivomensual + "</div>"
         });
     }); 
 

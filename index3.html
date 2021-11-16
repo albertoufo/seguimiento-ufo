@@ -50,22 +50,23 @@
 
 
   <script>
-    const url = "https://docs.google.com/spreadsheets/d/1pUIEiPw2HEjjMjpanO6T4K_pZA11oLKA6CqdCFeOmns/export?format=csv";
+    const urlventas = "https://docs.google.com/spreadsheets/d/1pUIEiPw2HEjjMjpanO6T4K_pZA11oLKA6CqdCFeOmns/export?format=csv";
     const ventas = document.querySelector("#ventas");
-    const prueba1 = document.querySelector("#producto");
-    const prueba2 = document.querySelector("#marketing");
-    const prueba3 = document.querySelector("#experience");
-    const prueba4 = document.querySelector("#inversion");
-    const prueba5 = document.querySelector("#`roduccion");
+    const producto = document.querySelector("#producto");
+    const marketing = document.querySelector("#marketing");
+    const experience = document.querySelector("#experience");
+    const inversion = document.querySelector("#inversion");
+    const produccion = document.querySelector("#produccion");
+    const expansion = document.querySelector("#expansion");
 
-    fetch(url).then(result=>result.text()).then(function(csvtext) {
+    fetch(urlventas).then(result=>result.text()).then(function(csvtext) {
         return csv().fromString(csvtext);
     }).then(function(csv){
         csv.forEach(function(row){
-            ventas.innerHTML += "<div class='col-6'> <strong>Ventas anuales</strong>" + ventasanuales.respuesta + "</div>"
-            ventas.innerHTML += "<div class='col-6'> <strong>Objetivo anual</strong>" + objetivoanual.eee + "</div>"
-            ventas.innerHTML += "<div class='col-6'> <strong>Ventas mensuales</strong>" + ventasmensual.aaa + "</div>"
-            ventas.innerHTML += "<div class='col-6'> <strong>Objetivo mensuales</strong>" + objetivomensual.aaa + "</div>"
+            ventas.innerHTML += "<div class='col-6'> <h4>Ventas anuales</h4> " + ventasanuales.respuesta + "</div>"
+            ventas.innerHTML += "<div class='col-6'> <h4>Objetivo anual</h4> " + objetivoanual.eee + "</div>"
+            ventas.innerHTML += "<div class='col-6'> <h4>Ventas mensuales</h4> " + ventasmensual.aaa + "</div>"
+            ventas.innerHTML += "<div class='col-6'> <h4>Objetivo mensuales</h4> " + objetivomensual.aaa + "</div>"
         });
     }); 
 

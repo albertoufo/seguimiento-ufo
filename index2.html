@@ -17,8 +17,9 @@
         fetch(url).then(result=>result.text()).then(function(csvtext){
             return csv().formString(csvtext);
         }).then(function(csv){
+            main.innerHTML = "<code>" + JSON.stringify(csv) + "</code>"
             csv.forEach(function(row){
-                main.innerHTML += "<h3>" + row.name + "</h3>"
+                main.innerHTML += "<h3>" + row.respuesta + "</h3>"
             });
         }); 
 

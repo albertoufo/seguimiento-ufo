@@ -6,9 +6,8 @@ fetch(url)
   .then(data => document.getElementById("ventas").innerHTML=myItems(data.substring(47).slice(0, -2))  
   );
  
-  console.log(jsonString)
 function myItems(jsonString){
- console.log(JSON.parse(jsonString))
+ console.log(JSON.parse(jsonString));
   var json = JSON.parse(jsonString);
   var table = '<div>'
  

@@ -132,14 +132,14 @@
 
     //   Urls de google sheet
     const urlventas = "https://docs.google.com/spreadsheets/d/1pXcfkMKdXFD3XvmuBgkgVu7UXoxYN3ZDKOoOchIjKO0/export?format=csv";
-    const urlproducto = "https://docs.google.com/spreadsheets/d/1pXcfkMKdXFD3XvmuBgkgVu7UXoxYN3ZDKOoOchIjKO0/export?format=csv";
+    const urlproducto = "https://docs.google.com/spreadsheets/d/15b65mTn24-JvFFqdikZOIGRZcGJGhZgLTpp9XQnLXT4/export?format=csv";
     const urlmarketing = "https://docs.google.com/spreadsheets/d/1MexnUQYKjLSMJfYU4mbClKy0y8Sn5IHcsnku01QQlqk/export?format=csv";
     const urlexperience = "https://docs.google.com/spreadsheets/d/1pUIEiPw2HEjjMjpanO6T4K_pZA11oLKA6CqdCFeOmns/export?format=csv";
-    const urlinversion = "https://docs.google.com/spreadsheets/d/1pXcfkMKdXFD3XvmuBgkgVu7UXoxYN3ZDKOoOchIjKO0/export?format=csv";
-    const urlproduccion = "https://docs.google.com/spreadsheets/d/1pXcfkMKdXFD3XvmuBgkgVu7UXoxYN3ZDKOoOchIjKO0/export?format=csv";
+    const urlinversion = "https://docs.google.com/spreadsheets/d/1IGeF6rZxO5-hX-ZcKRAQKvnZzwvd_xuaJwx1LdsBN9I/export?format=csv";
+    const urlproduccion = "https://docs.google.com/spreadsheets/d/1I4sB4Pzx_Cx3HD-G7wFQRzfhQqyo_W3hfIEeOB2jb8I/export?format=csv";
     const urlexpansion = "https://docs.google.com/spreadsheets/d/1pXcfkMKdXFD3XvmuBgkgVu7UXoxYN3ZDKOoOchIjKO0/export?format=csv";
 
-    //   Urls de google sheet
+    //   Selectores html
     const ventas = document.querySelector("#ventas");
     const producto = document.querySelector("#producto");
     const marketing = document.querySelector("#marketing");
@@ -158,6 +158,8 @@
             ventas.innerHTML += "<div class='col-6 my-4'> <h5>Objetivo anual</h5> " + row.objetivoanual + "</div>"
             ventas.innerHTML += "<div class='col-6 my-4'> <h5>Ventas mensuales</h5> " + row.ventasmensual + "</div>"
             ventas.innerHTML += "<div class='col-6 my-4'> <h5>Objetivo mensuales</h5> " + row.objetivomensual + "</div>"
+            ventas.innerHTML += "<div class='col-6 my-4'> <h5>Ventas mensuales</h5> " + row.emprendedores + "</div>"
+            ventas.innerHTML += "<div class='col-6 my-4'> <h5>Objetivo mensuales</h5> " + row.advisors + "</div>"
         });
     });
 
@@ -166,10 +168,59 @@
         return csv().fromString(csvtext);
     }).then(function (csv) {
         csv.forEach(function (row) {
-            experience.innerHTML += "<div class='col-6 my-4'> <h5>experience anuales</h5> " + row.exp1 + "</div>"
-            experience.innerHTML += "<div class='col-6 my-4'> <h5>Objetivo anual</h5> " + row.exp2 + "</div>"
-            experience.innerHTML += "<div class='col-6 my-4'> <h5>experience mensuales</h5> " + row.exp3 + "</div>"
-            experience.innerHTML += "<div class='col-6 my-4'> <h5>Objetivo mensuales</h5> " + row.exp4 + "</div>"
+            experience.innerHTML += "<div class='col-6 my-4'> <h5>Dato 1</h5> " + row.exp1 + "</div>"
+            experience.innerHTML += "<div class='col-6 my-4'> <h5>Dato 2</h5> " + row.exp2 + "</div>"
+            experience.innerHTML += "<div class='col-6 my-4'> <h5>Dato 3</h5> " + row.exp3 + "</div>"
+            experience.innerHTML += "<div class='col-6 my-4'> <h5>Dato 4</h5> " + row.exp4 + "</div>"
+        });
+    });
+
+    // Fetch marketing
+    fetch(urlmarketing).then(result => result.text()).then(function (csvtext) {
+        return csv().fromString(csvtext);
+    }).then(function (csv) {
+        csv.forEach(function (row) {
+            marketing.innerHTML += "<div class='col-6 my-4'> <h5>Dato 1</h5> " + row.mkt1 + "</div>"
+            marketing.innerHTML += "<div class='col-6 my-4'> <h5>Dato 2</h5> " + row.mkt2 + "</div>"
+            marketing.innerHTML += "<div class='col-6 my-4'> <h5>Dato 3</h5> " + row.mkt3 + "</div>"
+            marketing.innerHTML += "<div class='col-6 my-4'> <h5>Dato 4</h5> " + row.mkt4 + "</div>"
+        });
+    });
+
+     // Fetch marketing
+     fetch(urlinversion).then(result => result.text()).then(function (csvtext) {
+        return csv().fromString(csvtext);
+    }).then(function (csv) {
+        csv.forEach(function (row) {
+            inversion.innerHTML += "<div class='col-6 my-4'> <h5>Dato 1</h5> " + row.inv1 + "</div>"
+            inversion.innerHTML += "<div class='col-6 my-4'> <h5>Dato 2</h5> " + row.inv2 + "</div>"
+            inversion.innerHTML += "<div class='col-6 my-4'> <h5>Dato 3</h5> " + row.inv3 + "</div>"
+            inversion.innerHTML += "<div class='col-6 my-4'> <h5>Dato 4</h5> " + row.inv4 + "</div>"
+        });
+    });
+
+ 
+     // Fetch produccion
+     fetch(urlproduccion).then(result => result.text()).then(function (csvtext) {
+        return csv().fromString(csvtext);
+    }).then(function (csv) {
+        csv.forEach(function (row) {
+            produccion.innerHTML += "<div class='col-6 my-4'> <h5>Dato 1</h5> " + row.pro1 + "</div>"
+            produccion.innerHTML += "<div class='col-6 my-4'> <h5>Dato 2</h5> " + row.pro2 + "</div>"
+            produccion.innerHTML += "<div class='col-6 my-4'> <h5>Dato 3</h5> " + row.pro3 + "</div>"
+            produccion.innerHTML += "<div class='col-6 my-4'> <h5>Dato 4</h5> " + row.pro4 + "</div>"
+        });
+    });
+
+     // Fetch expansion
+     fetch(urlexpansion).then(result => result.text()).then(function (csvtext) {
+        return csv().fromString(csvtext);
+    }).then(function (csv) {
+        csv.forEach(function (row) {
+            expansion.innerHTML += "<div class='col-6 my-4'> <h5>Dato 1</h5> " + row.expa1 + "</div>"
+            expansion.innerHTML += "<div class='col-6 my-4'> <h5>Dato 2</h5> " + row.expa2 + "</div>"
+            expansion.innerHTML += "<div class='col-6 my-4'> <h5>Dato 3</h5> " + row.expa3 + "</div>"
+            expansion.innerHTML += "<div class='col-6 my-4'> <h5>Dato 4</h5> " + row.expa4 + "</div>"
         });
     });
 
@@ -179,7 +230,7 @@
 
 <script>
 
-    var countDownDate = new Date("Dec 5, 2021 00:00:00").getTime();
+    var countDownDate = new Date("Dec 25, 2021 00:00:00").getTime();
     var x = setInterval(function () {
 
         var now = new Date().getTime();

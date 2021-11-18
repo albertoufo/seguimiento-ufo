@@ -163,26 +163,26 @@
 
                     <div class="gx-2 my-3 row">
                         <div class="col">
-                            <div class="card p-3">
-                                <h5 class="text-center" style="font-size: 2vw;"> <strong> 🇪🇸 Emprendedores </strong> </h5>
+                            <div class="card p-4">
+                                <h5 class="text-center" style="font-size: 1.75vw;"> <strong> 🇪🇸 Emprendedores </strong> </h5>
                                 <h1 style="font-size: 10vw;"> 400 </h1>
                             </div>
                         </div>
                         <div class="col">
-                            <div class="card p-3">
-                                <h5 class="text-center" style="font-size: 2vw;"> <strong> 🇪🇸 Advisors </strong> </h5>
+                            <div class="card p-4">
+                                <h5 class="text-center" style="font-size: 1.75vw;"> <strong> 🇪🇸 Advisors </strong> </h5>
                                 <h1 style="font-size: 10vw;"> 400 </h1>
                             </div>
                         </div>
                         <div class="col">
-                            <div class="card p-3">
-                                <h5 class="text-center" style="font-size: 2vw;"> <strong>  🌎 Emprendedores </strong></h5>
+                            <div class="card p-4">
+                                <h5 class="text-center" style="font-size: 1.75vw;"> <strong>  🌎 Emprendedores </strong></h5>
                                 <h1 style="font-size: 10vw;"> 400 </h1>
                             </div>
                         </div>
                         <div class="col">
-                            <div class="card p-3">
-                                <h5 class="text-center" style="font-size: 2vw;"> <strong> 🌎 Advisors </strong> </h5>
+                            <div class="card p-4">
+                                <h5 class="text-center" style="font-size: 1.75vw;"> <strong> 🌎 Advisors </strong> </h5>
                                 <h1 style="font-size: 10vw;"> 400 </h1>
                             </div>
                         </div>
@@ -403,6 +403,8 @@
             ventas.innerHTML += "<div class='col-6 my-4'> <h5>Objetivo mensuales</h5> " + row.objetivomensual + "</div>"
             ventas.innerHTML += "<div class='col-6 my-4'> <h5>Ventas mensuales</h5> " + row.emprendedores + "</div>"
             ventas.innerHTML += "<div class='col-6 my-4'> <h5>Objetivo mensuales</h5> " + row.advisors + "</div>"
+
+            ventasgeneral.innerHTML += "<div class='col h-100'><div class='card'><div class='p-3 pb-0 w-100'><h5><strong>Ventas</strong></h5></div><hr><div id='ventas' class='p-3 row'></div></div></div>"
         });
     });
 

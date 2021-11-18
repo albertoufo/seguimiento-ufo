@@ -18,6 +18,7 @@ h1{
     border-radius: 8px;
     justify-content: center;
     display: flex;
+    text-align: center;
 }
 
 hr{

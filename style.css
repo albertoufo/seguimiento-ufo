@@ -16,6 +16,9 @@ h1{
     border: none;
     background-color: #fff;
     border-radius: 8px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }
 
 hr{
